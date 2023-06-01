@@ -18,6 +18,7 @@ class LoginViewController: UIViewController, EditData {
     var arrstudent = [UserData]()
     var i = Int()
     var isUpdate = Bool()
+    var delegate:EditData!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,7 @@ class LoginViewController: UIViewController, EditData {
             else{
                 print("match found")
                 let listVc = self.storyboard?.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
-                listVc.delegate = self
+                listVc.delegate = delegate
                 self.navigationController?.pushViewController(listVc, animated: true)
             }
         } catch let error as NSError {

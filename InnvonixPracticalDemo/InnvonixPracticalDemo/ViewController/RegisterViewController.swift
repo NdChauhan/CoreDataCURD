@@ -89,6 +89,7 @@ class RegisterViewController: UIViewController, EditData {
     
     @IBAction func LoginButtonClicked(_ sender: UIButton) {
         let loginVc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        loginVc.delegate = self
         self.navigationController?.pushViewController(loginVc, animated: true)
     }
     
